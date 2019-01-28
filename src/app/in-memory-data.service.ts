@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const tasks = [
       { id: 1, title: 'Do homework', status: false },
       { id: 2, title: 'Buy some products', status: false },
-      { id: 3, title: 'Go running', status: false }
+      { id: 3, title: 'Go running', status: true }
     ];
     return {tasks};
   }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 import { Task } from './task';
 
@@ -22,8 +22,8 @@ export class TaskService {
     getTasks (): Observable<Task[]> {
         return this.http.get<Task[]>(this.tasksUrl)
             .pipe(
-                tap(_ => this.log('fetched tasks')),
-                catchError(this.handleError('getTasks', []))
+                // tap(_ => this.log('fetched tasks')),
+                // catchError(this.handleError('getTasks', []))
             );
     }
 
