@@ -13,14 +13,11 @@ export class TodolistComponent implements OnInit {
   tasks: Task[];
 
   constructor(private taskService: TaskService) { }
-  
-  // tasks = TASKS;
 
   selectedTask: Task;
   onSelect(task: Task): void {
     this.selectedTask = task;
     task.status = !task.status;
-    console.log(TASKS);
   }
 
   ngOnInit() {
@@ -30,6 +27,23 @@ export class TodolistComponent implements OnInit {
   getTasks(): void {
     this.taskService.getTasks()
         .subscribe(tasks => this.tasks = tasks);
+
+
+  }
+
+  add(title: string, status: boolean): void {
+      title = title.trim();
+      status = false;
+      if (!title) { return; }
+      this.taskService.addTask({ title, status } as Task)
+          .subscribe(hero => {
+              this.tasks.push(hero);
+          });
+  }
+
+  delete(task:Task): void {
+      this.tasks = this.tasks.filter(t => t !== task);
+      this.taskService.deleteTask(task).subscribe();
   }
 
 }

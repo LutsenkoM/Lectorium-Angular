@@ -4,16 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
-import { TodoitemComponent } from './components/todoitem/todoitem.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodolistComponent,
-    TodoitemComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

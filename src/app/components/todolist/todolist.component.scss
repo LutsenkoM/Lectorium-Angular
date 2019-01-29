@@ -1,18 +1,28 @@
-.done {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
 .todo {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   //font-size: 0;
   input{
-    height: 20px;
-    width: 79%;
+    height: 36px;
+    width: 77%;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 15px;
+    border-radius: 20px 0 0 20px;
+    border: 2px solid gray;
+    outline: none;
   }
-  button {
+  .add {
     width: 20%;
-    height: 20px;
+    height: 42px;
+    border: 0;
+    border-radius: 0 20px 20px 0;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
   }
 }
 .tasks-list {
@@ -23,7 +33,29 @@
     font-size: 16px;
     padding: 10px 20px;
     background-color: #5bc0de;
-    border: 1px solid gray;
+    border: 2px solid gray;
     cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 5px;
+  }
+  .done {
+    text-decoration: line-through;
+    background-color: lightgreen;
+  }
+  .btns {
+    display: inline-block;
+    float: right;
+    button {
+      border: none;
+      background-color: azure;
+      font-size: 16px;
+      margin-right: 10px;
+      font-weight: 600;
+      padding: 2px 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: palegoldenrod;
+      }
+    }
   }
 }
