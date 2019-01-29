@@ -9,7 +9,7 @@ import { TaskService } from '../../task.service';
   styleUrls: ['./todolist.component.scss']
 })
 export class TodolistComponent implements OnInit {
-
+  title = 'ToDo List';
   tasks: Task[];
 
   constructor(private taskService: TaskService) { }
