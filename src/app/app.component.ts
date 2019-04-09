@@ -24,6 +24,9 @@ import { Component } from '@angular/core';
       <p>{{object}}</p>
       <div><pre>{{ object | json }}</pre></div>
     </div>
+    <hr/>
+    <h2>Custom pipes</h2>
+      <app-custom-pipe></app-custom-pipe>
   `
 })
 export class AppComponent {

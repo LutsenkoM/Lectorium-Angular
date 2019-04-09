@@ -3,10 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import {PowPipe} from "./pow.pipe";
+import { MyPipePipe } from './my-pipe.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomPipeComponent,
+    PowPipe,
+    MyPipePipe
   ],
   imports: [
     BrowserModule,
