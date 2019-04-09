@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import 'rxjs';
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-dynamic-filter',
   styleUrls: ['./dynamic-filter.component.scss'],
   template:
   `      
+      <h1>{{asyncTitle | async}}</h1>
       <input type="text" [(ngModel)]="searchCar">
       <button (click)="addCar()">Add car</button>
       <ul>
@@ -24,6 +27,12 @@ export class DynamicFilterComponent implements OnInit {
     {name: 'Mercedes', description:'WFM 5'},
     {name: 'BMW', description:'WFM 6'}
   ];
+
+  // title = '';
+
+  asyncTitle = Observable.of('Async title 3seconds')
+      .delay(3000)
+      // .subscribe((str) => this.title = str);
 
   addCar() {
     this.cars.push({
