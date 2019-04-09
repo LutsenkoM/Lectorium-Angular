@@ -27,6 +27,9 @@ import { Component } from '@angular/core';
     <hr/>
     <h2>Custom pipes</h2>
       <app-custom-pipe></app-custom-pipe>
+    <hr/>
+    <h2>Dynamic filter</h2>
+    <app-dynamic-filter></app-dynamic-filter>
   `
 })
 export class AppComponent {

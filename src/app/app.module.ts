@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 import {PowPipe} from "./pow.pipe";
 import { MyPipePipe } from './my-pipe.pipe';
+import { DynamicFilterComponent } from './dynamic-filter/dynamic-filter.component';
+import { CarFilterPipe } from './car-filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,11 +16,14 @@ import { MyPipePipe } from './my-pipe.pipe';
     AppComponent,
     CustomPipeComponent,
     PowPipe,
-    MyPipePipe
+    MyPipePipe,
+    DynamicFilterComponent,
+    CarFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
