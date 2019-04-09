@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   template:
   `      
       <input type="text" [(ngModel)]="searchCar">
+      <button (click)="addCar()">Add car</button>
       <ul>
-        <li *ngFor="let car of cars | carFilter:searchCar:'description'; let i=index">
+        <li *ngFor="let car of cars | carFilter:searchCar:'name'; let i=index">
           <p><b>{{i+1}}</b> {{car.name}} <i>{{car.description}}</i></p>
         </li>
       </ul>
@@ -22,7 +23,14 @@ export class DynamicFilterComponent implements OnInit {
     {name: 'Audi', description:'WFM 4'},
     {name: 'Mercedes', description:'WFM 5'},
     {name: 'BMW', description:'WFM 6'}
-  ]
+  ];
+
+  addCar() {
+    this.cars.push({
+      name: "New car",
+      description: 'WFM'
+    })
+  }
 
   constructor() { }
 
