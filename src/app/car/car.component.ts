@@ -23,7 +23,10 @@ export class CarComponent {
 
   onAction(type: string) {
     this.car.isSold = type === 'buy' ? true : false;
-    this.consoleService.log(`${this.car.name} status = ${type}`);
+    // const service = new ConsoleService();
+    // service.log;
+      this.consoleService.log(`${this.car.name} status= ${type}`);
+
   }
 
 }
