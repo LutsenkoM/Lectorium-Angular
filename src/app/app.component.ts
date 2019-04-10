@@ -5,11 +5,6 @@ import {NgForm} from "@angular/forms";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [`
-      /*input . {*/
-      /*  border: 1px solid red;*/
-      /*}*/
-  `]
 })
 export class AppComponent {
 
