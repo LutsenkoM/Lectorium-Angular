@@ -8,7 +8,8 @@ import {NgForm} from "@angular/forms";
 })
 export class AppComponent {
 
-  // @ViewChild('form') form: NgForm;  NEW WAY
+  @ViewChild('form') form: NgForm;
+
   answers = [{
     type: 'yes',
     text: 'Да'
@@ -20,11 +21,34 @@ export class AppComponent {
   defaultAnswer = 'no';
   defaultCountry = 'ua';
 
-  submitForm(form: NgForm) {
-    console.log(form);
+  // submitForm(form: NgForm) {
+  //   console.log(form);
+  // }
+
+  formData = {};
+  isSubmited = false;
+
+  addRandEmail() {
+    const randEmail = 'max@gmai.com';
+    // this.form.setValue({
+    //   user: {
+    //     email: randEmail,
+    //     pass: ''
+    //   },
+    //   country: '',
+    //   answer: ''
+    // })
+
+    this.form.form.patchValue({
+      user: { email: randEmail }
+    })
   }
 
-  // submitForm() {
-  //   console.log(this.form);  // NEW WAY
-  // }
+  submitForm() {
+    this.isSubmited = true;
+    this.formData = this.form.value;
+    this.form.reset();
+    console.log(this.form);  // NEW WAY
+  }
+
 }
