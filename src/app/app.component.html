@@ -1,16 +1,19 @@
 <div class="col-xs-8 col-xs-offset-2">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+      <div class="form-group" [ngClass]="{'has-error': form.get('user.email').invalid && form.get('user.email').touched}">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">Email must be not empty</p>
+      </div>
 
-    <div class="form-group" [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
-      <label>Email</label>
-      <input type="text" class="form-control" formControlName="email">
-      <p *ngIf="form.get('email').invalid && form.get('email').touched">Email must be not empty</p>
+      <div class="form-group" [ngClass]="{'has-error': form.get('user.pass').invalid && form.get('user.pass').touched}">
+        <label>Пароль</label>
+        <input type="password" class="form-control" formControlName="pass">
+        <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched">Pass must be not empty</p>
+      </div>
     </div>
-    <div class="form-group" [ngClass]="{'has-error': form.get('pass').invalid && form.get('pass').touched}">
-      <label>Пароль</label>
-      <input type="password" class="form-control" formControlName="pass">
-      <p *ngIf="form.get('pass').invalid && form.get('pass').touched">Pass must be not empty</p>
-    </div>
+
     <div class="form-group">
       <label>Выберите страну</label>
       <select class="form-control" formControlName="country">
@@ -19,11 +22,13 @@
         <option value="ua">Украина</option>
       </select>
     </div>
+
     <div class="radio" *ngFor="let ans of answers">
       <label>
         <input type="radio" [value]="ans.type" formControlName="answer"> {{ans.text}}
       </label>
     </div>
+
     <button class="btn btn-success" type="submit" [disabled]="form.invalid">Сохранить</button>
 
   </form>
