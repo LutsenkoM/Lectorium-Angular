@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import {CarsService} from '../cars.service';
 
 @Component({
   selector: 'app-car-add',
@@ -7,11 +8,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class CarAddComponent{
 
-  @Output() onCarAdd = new EventEmitter<String>();
+  // @Output() onCarAdd = new EventEmitter<String>();
+
+  constructor(private service: CarsService) {}
+
   carName = '';
 
   addCar() {
-    this.onCarAdd.emit(this.carName);
+    // this.onCarAdd.emit(this.carName);
+    this.service.addCar(this.carName);
     this.carName = '';
   }
 
