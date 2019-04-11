@@ -28,14 +28,19 @@ export class AppComponent implements OnInit {
     loadCars() {
       this.carsService
           .getCars()
-          .subscribe(response => {
+          .subscribe((cars: Cars[]) => {
             // console.log(response);
-            this.cars = response;
+            this.cars = cars;
           });
     }
 
     addCar() {
-
+        this.carsService
+            .addCar(this.carName)
+            .subscribe((car: Cars) => {
+               this.cars.push(car);
+            });
+        this.carName = '';
     }
 
 }
