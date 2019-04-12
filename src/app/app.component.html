@@ -1,12 +1,15 @@
 <div class="col-xs-8 col-xs-offset-2">
   <input type="text" class="form-control" [(ngModel)]="carName">
   <button class="btn btn-success"(click)="addCar()">Add car</button>
-  <hr/>
   <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
+  <hr/>
   <hr>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let car of cars">
-      <span class="badge">{{car.id}}</span> {{car.name}} ({{car.color}})
-    </li>
+      <span class="badge" [ngStyle]="{background: car.color}">
+        {{car.id}}
+      </span>
+      {{car.name}}
+    <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Change color</button></li>
   </ul>
 </div>
