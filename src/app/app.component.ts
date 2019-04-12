@@ -25,11 +25,12 @@ export class AppComponent implements OnInit {
     constructor(private carsService: CarsService) {}
 
     ngOnInit() {
-    //   this.carsService
-    //       .getCars()
-    //       .subscribe((response) => {     get data on init
-    //         console.log(response);
-    //       });
+        this.carsService
+            .getCars()
+            .subscribe((cars: Cars[]) => {
+                // console.log(response);
+                this.cars = cars;
+            });
     }
 
     loadCars() {
@@ -62,6 +63,15 @@ export class AppComponent implements OnInit {
                console.log(data);
             });
     }
+
+    deleteCar(car: Cars) {
+        this.carsService
+            .removeCar(car)
+            .subscribe((data) =>{
+                this.cars = this.cars.filter(c => c.id !== car.id)
+            });
+    };
+
 
 
 }

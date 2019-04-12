@@ -2,42 +2,23 @@
   "cars": [
     {
       "name": "Ford",
-      "color": "red",
+      "color": "blue",
       "id": 1
     },
     {
       "name": "BMW",
-      "color": "green",
+      "color": "red",
       "id": 2
     },
     {
-      "name": "Mersedes",
-      "color": "blue",
+      "name": "Bently",
+      "color": "green",
       "id": 3
     },
     {
-      "name": "dwdw",
+      "name": "Mazda",
       "color": "blue",
       "id": 4
-    },
-    {
-      "name": "Ford",
-      "color": "grey",
-      "id": 5
-    },
-    {
-      "name": "yjututy",
-      "color": "red",
-      "id": 6
-    },
-    {
-      "name": "Bently",
-      "id": 7
-    },
-    {
-      "name": "jhjhj",
-      "color": "red",
-      "id": 8
     }
   ]
 }
