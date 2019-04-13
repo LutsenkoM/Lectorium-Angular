@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CarsPageComponent} from "./cars-page/cars-page.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {CarComponent} from "./car/car.component";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 const appRouts: Routes = [
   {
@@ -25,6 +26,12 @@ const appRouts: Routes = [
   {
     'path':'',
     component: HomePageComponent
+  },
+  {
+    path: 'not-found', component: NotFoundComponent
+  },
+  {
+    path: '**', redirectTo:'/not-found'
   }
 ];
 

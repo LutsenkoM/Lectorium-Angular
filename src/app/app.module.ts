@@ -9,13 +9,15 @@ import { CarsService } from './cars.service';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import { CarComponent } from './car/car.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     CarsPageComponent,
-    CarComponent
+    CarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
