@@ -3,7 +3,11 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let car of cars">
-    <a [routerLink]="['/cars', car.id, car.name]" >{{car.name}}</a>
+    <a
+            [routerLink]="['/cars', car.id, car.name]"
+            [queryParams]="{year: car.year, color: car.color}"
+            fragment="pic"
+    >{{car.name}}</a>
 <!--    <a [routerLink]="['/cars', car.name]" >{{car.name}}</a>-->
   </li>
 </ul>

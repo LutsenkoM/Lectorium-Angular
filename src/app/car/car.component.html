@@ -1,5 +1,11 @@
-<h2>Welcome to single car component {{id}}</h2>
-<h3>{{name}}</h3>
+<h2>Car's ID: {{id}}</h2>
+<h3>Brand: {{name}}</h3>
+<p>Year: {{year}}</p>
+<p>Color: {{color}}</p>
+<p>{{hash}}</p>
 
-<h4><a [routerLink]="['/cars', 8,'Mazda' ]" >Open Mazda</a></h4>
+<hr/>
+
+<!--<h4><a [routerLink]="['/cars', 8,'Mazda' ]" >Open Mazda</a></h4>-->
 <!--<h4><a [routerLink]="['/cars', 'Mazda' ]" >Open Mazda</a></h4>-->
+<h4><a (click)="openMazdaPage()" >Open Mazda</a></h4>
