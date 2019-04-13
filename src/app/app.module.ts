@@ -8,12 +8,14 @@ import { CarsPageComponent } from './cars-page/cars-page.component';
 import { CarsService } from './cars.service';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    CarsPageComponent
+    CarsPageComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
