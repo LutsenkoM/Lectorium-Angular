@@ -1,15 +1,8 @@
 {
+"title": {
+	"value": "Car managger"
+},
   "cars": [
-    {
-      "name": "Ford",
-      "color": "blue",
-      "id": 1
-    },
-    {
-      "name": "BMW",
-      "color": "red",
-      "id": 2
-    },
     {
       "name": "Bently",
       "color": "green",
@@ -19,6 +12,21 @@
       "name": "Mazda",
       "color": "blue",
       "id": 4
+    },
+    {
+      "name": "dsfsdfsd",
+      "color": "blue",
+      "id": 5
+    },
+    {
+      "name": "sdfsf",
+      "color": "blue",
+      "id": 6
+    },
+    {
+      "name": "fsdfsdf",
+      "color": "blue",
+      "id": 7
     }
   ]
 }
