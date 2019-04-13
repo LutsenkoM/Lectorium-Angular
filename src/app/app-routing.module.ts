@@ -7,12 +7,17 @@ import {CarComponent} from "./car/car.component";
 const appRouts: Routes = [
   {
     'path':'cars',
-    component: CarsPageComponent
+    component: CarsPageComponent, children: [
+      {
+        'path':`:id/:name`,
+        component: CarComponent
+      }
+    ]
   },
-  {
-    'path':`cars/:id/:name`,
-    component: CarComponent
-  },
+  // {
+  //   'path':`cars/:id/:name`,
+  //   component: CarComponent
+  // },
   // {
   //   'path':`cars/:name`,
   //   component: CarComponent
