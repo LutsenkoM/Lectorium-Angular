@@ -10,6 +10,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import { CarComponent } from './car/car.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {AuthGuardService} from "./auth-guard.service";
+import {AuthService} from "./auth.service";
+import { NewPageComponent } from './new-page/new-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomePageComponent,
     CarsPageComponent,
     CarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NewPageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [CarsService],
+  providers: [CarsService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
