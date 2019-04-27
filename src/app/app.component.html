@@ -6,6 +6,10 @@
 
 <button class="btn btn-primary" (click)="isVisible = !isVisible">Switch</button>
 <hr>
-<div [@divTrigger]="'show'" class="alert alert-danger" *ngIf="isVisible">
+<div @divTrigger class="alert alert-danger" *ngIf="isVisible">
     Lorem ipsum dolor sit amet.
 </div>
+
+<hr>
+
+<div [@changeWidth]="isVisible ? 'a' : 'b'" style="height: 250px; width: 200px; background-color: red;"></div>

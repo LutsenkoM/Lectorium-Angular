@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {divTrigger} from "./app.animations";
+import {changeWidthTrigger, divTrigger} from "./app.animations";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [divTrigger]
+  animations: [divTrigger, changeWidthTrigger]
 })
 export class AppComponent {
   // clickedDivState = 'start';
