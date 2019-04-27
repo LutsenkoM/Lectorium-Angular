@@ -17,8 +17,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
               width: '400px',
               height: '400px'
           })),
-          transition('start  => end', animate(1500)),
-          transition('end  => start', animate('800ms 0.5s ease-out'))
+          state('active', style({
+              backgroundColor: 'orange',
+              width: '250px',
+              height: '200px'
+          })),
+          transition('start  <=> end', animate('800ms ease-in')),
+          transition('start => active', animate(400)),
+          transition('active => end', animate(400))
       ])
   ]
 })
