@@ -6,9 +6,16 @@
 
 <button class="btn btn-primary" (click)="isVisible = !isVisible">Switch</button>
 <hr>
-<div @divTrigger class="alert alert-danger" *ngIf="isVisible">
+<div
+        @divTrigger
+        (@divTrigger.start)="onAnimationStart({event : $event})"
+        (@divTrigger.done)="onAnimationDone($event)"
+        class="alert alert-danger"
+        *ngIf="isVisible"
+>
     Lorem ipsum dolor sit amet.
 </div>
+
 
 <!--<hr>-->
 
