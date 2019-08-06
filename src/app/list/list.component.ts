@@ -1,0 +1,46 @@
+import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+
+import { map } from 'rxjs/operators';
+
+import gql from 'graphql-tag';
+
+import { Course, Query } from '../types';
+import {HttpLink} from 'apollo-angular-link-http';
+import {Observable} from 'rxjs';
+
+@Component({
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
+})
+export class ListComponent implements OnInit {
+
+  courses: Observable<Course[]>;
+
+  constructor(
+    private apollo: Apollo,
+  ) { }
+
+  ngOnInit() {
+    this.courses = this.apollo.watchQuery<Query>({
+      query: gql`
+      query allCourses {
+        allCourses {
+          id
+          title
+          author
+          description
+          topic
+          url
+        }
+      }
+      `
+    })
+    .valueChanges
+      .pipe(
+        map(result => result.data.allCourses)
+      );
+  }
+
+}

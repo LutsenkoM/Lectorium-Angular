@@ -1,0 +1,10 @@
+<div *ngFor="let course of courses | async">
+  <ul>
+    <li>id: {{course.id}}</li>
+    <li>title: {{course.title}}</li>
+    <li>author: {{course.author}}</li>
+    <li>description: {{course.description}}</li>
+    <li>topic: {{course.topic}}</li>
+    <li>url: {{course.url}}</li>
+  </ul>
+</div>
